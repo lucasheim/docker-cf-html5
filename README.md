@@ -29,7 +29,7 @@ If you're using Jenkins + Piper in your pipeline, you can call this image via [`
             string(credentialsId: "CF_USER", variable: 'CF_USER'),
             string(credentialsId: "CF_PASS", variable: 'CF_PASS')
           ]) {
-            dockerExecute(script: this, dockerImage: 'lucasheim/cf-html5:1.0') {
+            dockerExecute(script: this, dockerImage: 'lucasheim/cf-html5:latest') {
               sh """
                 cf login -a $CF_API -u $CF_USER -p $CF_PASS -o '$CF_ORG' -s '$CF_SPACE'
                 cf html5-push -n $CF_HTML5_REPO build
